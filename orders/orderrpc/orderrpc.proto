@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package orderrpc;
+option go_package="./orderrpc";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+message CreateOrderRequest{
+  string id=1;
+  int64 userid=2;
+  int32 shoppingid=3;
+  float payment=4;
+  int32 paymenttype=5;
+  int32  postage=6;
+  int32 status=7;
+}
+message CreateOrderResponse{
+  int64 affected=1;
+}
+service Orderrpc {
+  rpc Ping(Request) returns(Response);
+  rpc CreateOrder(CreateOrderRequest)returns(CreateOrderResponse);
+}

@@ -1,0 +1,7 @@
+Name: userrpc.rpc
+ListenOn: 0.0.0.0:8082
+Consul:
+  Host: localhost:8500
+  Key: userrpc.rpc
+
+Dsn: root:1234qwer@tcp(localhost:3306)/user?charset=utf8mb4&parseTime=True&loc=Local

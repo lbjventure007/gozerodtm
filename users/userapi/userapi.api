@@ -1,0 +1,24 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+type UpdateBalanceRequest {
+	Id      int64   `json:"id"`
+	Balance float64 `json:"balance"`
+}
+type UpdateBalanceResponse {
+	Message string `json:"message"`
+}
+
+service userapi-api {
+	@handler UserapiHandler
+	get /from/:name(Request) returns (Response)
+
+	@handler UpdateBalanceHandler
+	post /user/update-balance(UpdateBalanceRequest) returns(UpdateBalanceResponse)
+
+}

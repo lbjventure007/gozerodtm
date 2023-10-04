@@ -1,0 +1,22 @@
+Name: orderapi.api
+Host: 0.0.0.0
+Port: 8883
+#Etcd:
+#  Hosts:
+#  - localhost:2379
+#  Key: orderapi.api
+
+
+Consul:
+  Host: localhost:8300
+  Key: orderapi.api
+MicroService:
+  Driver: 'dtm-driver-gozero' # name of the driver to handle register/discover
+  Target: 'consul://localhost:8500/dtmservice' # register dtm server to this url
+  EndPoint: 'localhost:36790'
+
+UserRpc:
+  Target: consul://localhost:8500/userrpc.rpc?wait=14s
+
+OrderRpc:
+  Target: consul://localhost:8500/orderrpc.rpc?wait=14s

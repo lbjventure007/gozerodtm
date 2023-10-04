@@ -1,0 +1,24 @@
+Name: orderrpc.rpc
+ListenOn: 0.0.0.0:8081
+#Etcd:
+#  Hosts:
+#  - 127.0.0.1:2379
+#  Key: orderrpc.rpc
+Dsn: root:1234qwer@tcp(localhost:3306)/order?charset=utf8mb4&parseTime=True&loc=Local
+
+#UserRpc:
+#  Etcd:
+#    Hosts:
+#    - localhost:2379
+#    Key: userrpc.rpc
+Consul:
+  Host: localhost:8500
+  Key: orderrpc.rpc
+MicroService:
+  Driver: 'dtm-driver-gozero' # 配置dtm使用go-zero的微服务协议
+  Target: 'consul://localhost:8300/dtmservice' # 把dtm注册到etcd的这个地址
+  EndPoint: 'localhost:36790' # dtm的本地地址
+
+
+UserRpc:
+  Target: consul://localhost:8500/userrpc.rpc?wait=14s

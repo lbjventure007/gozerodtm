@@ -1,0 +1,29 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+type CreateOrderRequest {
+	Id          string  `json:"id"`
+	Userid      int64   `json:"userid"`
+	ShoppingId  int64   `json:"shoppingid"`
+	Payment     float64 `json:"payment"`
+	PaymentType int64   `json:"paymenttype"`
+	Postage     int64   `json:"postage"`
+	Status      int64   `json:"status"`
+	Balance     float64 `json:"balance"`
+}
+
+type CreateOrderResponse {
+	Message string `json:"message"`
+}
+
+service orderapi-api {
+	@handler OrderapiHandler
+	get /from/:name(Request) returns (Response)
+	@handler CreateOrderHandler
+	post /order/create-order(CreateOrderRequest) returns (CreateOrderResponse);
+}
