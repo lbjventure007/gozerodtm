@@ -20,7 +20,49 @@ message UpdateBalanceResponse {
   string message=1;
 }
 
+
+message TranInRequest {
+  int64 id=1;
+  float balance=2;
+}
+
+message TranInResponse {
+  string message =1;
+}
+
+message TranInReverseRequest {
+  int64 id=1;
+  float balance=2;
+}
+
+message TranInReverseResponse {
+  string message =1;
+}
+
+
+message TranOutRequest {
+  int64 id=1;
+  float balance=2;
+}
+
+message TranOutResponse {
+  string message =1;
+}
+
+
+message TranOutReverseRequest {
+  int64 id=1;
+  float balance=2;
+}
+
+message TranOutReverseResponse {
+  string message =1;
+}
 service Userrpc {
   rpc Ping(Request) returns(Response);
   rpc UpdateBalance(UpdateBalanceRequest) returns (UpdateBalanceResponse);
+  rpc TranIn(TranInRequest) returns (TranInResponse);
+  rpc TranOut(TranOutRequest) returns (TranOutResponse);
+  rpc TranReverseIn(TranInRequest) returns (TranInReverseResponse);
+  rpc TranReverseOut(TranOutRequest) returns (TranOutReverseResponse);
 }

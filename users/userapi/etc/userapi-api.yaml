@@ -1,3 +1,5 @@
 Name: userapi-api
 Host: 0.0.0.0
 Port: 8884
+UserRpc:
+  Target: consul://localhost:8500/userrpc.rpc?wait=14s

@@ -13,14 +13,26 @@ import (
 )
 
 type (
-	Request               = userrpc.Request
-	Response              = userrpc.Response
-	UpdateBalanceRequest  = userrpc.UpdateBalanceRequest
-	UpdateBalanceResponse = userrpc.UpdateBalanceResponse
+	Request                = userrpc.Request
+	Response               = userrpc.Response
+	TranInRequest          = userrpc.TranInRequest
+	TranInResponse         = userrpc.TranInResponse
+	TranInReverseRequest   = userrpc.TranInReverseRequest
+	TranInReverseResponse  = userrpc.TranInReverseResponse
+	TranOutRequest         = userrpc.TranOutRequest
+	TranOutResponse        = userrpc.TranOutResponse
+	TranOutReverseRequest  = userrpc.TranOutReverseRequest
+	TranOutReverseResponse = userrpc.TranOutReverseResponse
+	UpdateBalanceRequest   = userrpc.UpdateBalanceRequest
+	UpdateBalanceResponse  = userrpc.UpdateBalanceResponse
 
 	Userrpc interface {
 		Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 		UpdateBalance(ctx context.Context, in *UpdateBalanceRequest, opts ...grpc.CallOption) (*UpdateBalanceResponse, error)
+		TranIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInResponse, error)
+		TranOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutResponse, error)
+		TranReverseIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInReverseResponse, error)
+		TranReverseOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutReverseResponse, error)
 	}
 
 	defaultUserrpc struct {
@@ -42,4 +54,24 @@ func (m *defaultUserrpc) Ping(ctx context.Context, in *Request, opts ...grpc.Cal
 func (m *defaultUserrpc) UpdateBalance(ctx context.Context, in *UpdateBalanceRequest, opts ...grpc.CallOption) (*UpdateBalanceResponse, error) {
 	client := userrpc.NewUserrpcClient(m.cli.Conn())
 	return client.UpdateBalance(ctx, in, opts...)
+}
+
+func (m *defaultUserrpc) TranIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInResponse, error) {
+	client := userrpc.NewUserrpcClient(m.cli.Conn())
+	return client.TranIn(ctx, in, opts...)
+}
+
+func (m *defaultUserrpc) TranOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutResponse, error) {
+	client := userrpc.NewUserrpcClient(m.cli.Conn())
+	return client.TranOut(ctx, in, opts...)
+}
+
+func (m *defaultUserrpc) TranReverseIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInReverseResponse, error) {
+	client := userrpc.NewUserrpcClient(m.cli.Conn())
+	return client.TranReverseIn(ctx, in, opts...)
+}
+
+func (m *defaultUserrpc) TranReverseOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutReverseResponse, error) {
+	client := userrpc.NewUserrpcClient(m.cli.Conn())
+	return client.TranReverseOut(ctx, in, opts...)
 }

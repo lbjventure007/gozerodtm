@@ -17,3 +17,13 @@ type UpdateBalanceRequest struct {
 type UpdateBalanceResponse struct {
 	Message string `json:"message"`
 }
+
+type TranInOutRequest struct {
+	InId    int64   `json:"inid"`
+	OutId   int64   `json:"outid"`
+	Balance float64 `json:"balance"`
+}
+
+type TranInOutResponse struct {
+	Message string `json:"message"`
+}

@@ -32,3 +32,29 @@ goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 # xa模式 
     userrpc 要注册到consul      _ = consul.RegisterService(c.ListenOn, c.Consul)
     orderrpc要注册到consul       _ = consul.RegisterService(c.ListenOn, c.Consul)
+
+# saga 模式 本机两个库 模拟多库表操作 注意得使用子屏障 不然自己得处理空回滚 悬挂 幂等问题
+    用户余额转入转出 两个库的用户表 user.user  user1.user
+    sql如下： 
+    CREATE TABLE `user` (
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+    `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '用户名',
+    `password` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '用户密码，MD5加密',
+    `phone` varchar(20) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '手机号',
+    `question` varchar(100) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '找回密码问题',
+    `answer` varchar(100) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '找回密码答案',
+    `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    `balance` decimal(16,2) DEFAULT NULL,
+    `forzen_balance` decimal(16,2) DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `ix_update_time` (`update_time`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户表';
+     
+    请求：
+    Post: localhost:8884/user/tran-inout
+    Body: {
+            "inid":1,
+            "outid":2,
+            "balance":1
+         }

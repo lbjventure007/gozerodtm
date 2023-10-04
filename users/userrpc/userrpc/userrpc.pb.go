@@ -216,6 +216,414 @@ func (x *UpdateBalanceResponse) GetMessage() string {
 	return ""
 }
 
+type TranInRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id      int64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Balance float32 `protobuf:"fixed32,2,opt,name=balance,proto3" json:"balance,omitempty"`
+}
+
+func (x *TranInRequest) Reset() {
+	*x = TranInRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranInRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranInRequest) ProtoMessage() {}
+
+func (x *TranInRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranInRequest.ProtoReflect.Descriptor instead.
+func (*TranInRequest) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *TranInRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *TranInRequest) GetBalance() float32 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
+type TranInResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *TranInResponse) Reset() {
+	*x = TranInResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranInResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranInResponse) ProtoMessage() {}
+
+func (x *TranInResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranInResponse.ProtoReflect.Descriptor instead.
+func (*TranInResponse) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *TranInResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type TranInReverseRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id      int64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Balance float32 `protobuf:"fixed32,2,opt,name=balance,proto3" json:"balance,omitempty"`
+}
+
+func (x *TranInReverseRequest) Reset() {
+	*x = TranInReverseRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranInReverseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranInReverseRequest) ProtoMessage() {}
+
+func (x *TranInReverseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranInReverseRequest.ProtoReflect.Descriptor instead.
+func (*TranInReverseRequest) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *TranInReverseRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *TranInReverseRequest) GetBalance() float32 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
+type TranInReverseResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *TranInReverseResponse) Reset() {
+	*x = TranInReverseResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranInReverseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranInReverseResponse) ProtoMessage() {}
+
+func (x *TranInReverseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranInReverseResponse.ProtoReflect.Descriptor instead.
+func (*TranInReverseResponse) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *TranInReverseResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type TranOutRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id      int64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Balance float32 `protobuf:"fixed32,2,opt,name=balance,proto3" json:"balance,omitempty"`
+}
+
+func (x *TranOutRequest) Reset() {
+	*x = TranOutRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranOutRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranOutRequest) ProtoMessage() {}
+
+func (x *TranOutRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranOutRequest.ProtoReflect.Descriptor instead.
+func (*TranOutRequest) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *TranOutRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *TranOutRequest) GetBalance() float32 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
+type TranOutResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *TranOutResponse) Reset() {
+	*x = TranOutResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranOutResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranOutResponse) ProtoMessage() {}
+
+func (x *TranOutResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranOutResponse.ProtoReflect.Descriptor instead.
+func (*TranOutResponse) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *TranOutResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type TranOutReverseRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id      int64   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Balance float32 `protobuf:"fixed32,2,opt,name=balance,proto3" json:"balance,omitempty"`
+}
+
+func (x *TranOutReverseRequest) Reset() {
+	*x = TranOutReverseRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranOutReverseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranOutReverseRequest) ProtoMessage() {}
+
+func (x *TranOutReverseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranOutReverseRequest.ProtoReflect.Descriptor instead.
+func (*TranOutReverseRequest) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *TranOutReverseRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *TranOutReverseRequest) GetBalance() float32 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
+type TranOutReverseResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *TranOutReverseResponse) Reset() {
+	*x = TranOutReverseResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_userrpc_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TranOutReverseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranOutReverseResponse) ProtoMessage() {}
+
+func (x *TranOutReverseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_userrpc_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranOutReverseResponse.ProtoReflect.Descriptor instead.
+func (*TranOutReverseResponse) Descriptor() ([]byte, []int) {
+	return file_userrpc_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *TranOutReverseResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_userrpc_proto protoreflect.FileDescriptor
 
 var file_userrpc_proto_rawDesc = []byte{
@@ -231,17 +639,62 @@ var file_userrpc_proto_rawDesc = []byte{
 	0x52, 0x07, 0x62, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x22, 0x31, 0x0a, 0x15, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x86, 0x01, 0x0a,
-	0x07, 0x55, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x12, 0x2b, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67,
-	0x12, 0x10, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4e, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42,
-	0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x1d, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63,
-	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x72,
-	0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x39, 0x0a, 0x0d,
+	0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x18, 0x0a,
+	0x07, 0x62, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07,
+	0x62, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x22, 0x2a, 0x0a, 0x0e, 0x54, 0x72, 0x61, 0x6e, 0x49,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x22, 0x40, 0x0a, 0x14, 0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x76,
+	0x65, 0x72, 0x73, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x62,
+	0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07, 0x62, 0x61,
+	0x6c, 0x61, 0x6e, 0x63, 0x65, 0x22, 0x31, 0x0a, 0x15, 0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x52,
+	0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18,
+	0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x3a, 0x0a, 0x0e, 0x54, 0x72, 0x61, 0x6e,
+	0x4f, 0x75, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x62, 0x61,
+	0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07, 0x62, 0x61, 0x6c,
+	0x61, 0x6e, 0x63, 0x65, 0x22, 0x2b, 0x0a, 0x0f, 0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x22, 0x41, 0x0a, 0x15, 0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x52, 0x65, 0x76, 0x65,
+	0x72, 0x73, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x62, 0x61,
+	0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07, 0x62, 0x61, 0x6c,
+	0x61, 0x6e, 0x63, 0x65, 0x22, 0x32, 0x0a, 0x16, 0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x52,
+	0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18,
+	0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x94, 0x03, 0x0a, 0x07, 0x55, 0x73, 0x65,
+	0x72, 0x72, 0x70, 0x63, 0x12, 0x2b, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x10, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x4e, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e,
+	0x63, 0x65, 0x12, 0x1d, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x1e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x39, 0x0a, 0x06, 0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x12, 0x16, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72,
+	0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x07,
+	0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x12, 0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70,
+	0x63, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x18, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x4f,
+	0x75, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x47, 0x0a, 0x0d, 0x54, 0x72,
+	0x61, 0x6e, 0x52, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x49, 0x6e, 0x12, 0x16, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72,
+	0x61, 0x6e, 0x49, 0x6e, 0x52, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x4a, 0x0a, 0x0e, 0x54, 0x72, 0x61, 0x6e, 0x52, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x4f, 0x75, 0x74, 0x12, 0x17, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e,
+	0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1f,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x4f, 0x75, 0x74,
+	0x52, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
+	0x0b, 0x5a, 0x09, 0x2e, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -256,23 +709,39 @@ func file_userrpc_proto_rawDescGZIP() []byte {
 	return file_userrpc_proto_rawDescData
 }
 
-var file_userrpc_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_userrpc_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_userrpc_proto_goTypes = []interface{}{
-	(*Request)(nil),               // 0: userrpc.Request
-	(*Response)(nil),              // 1: userrpc.Response
-	(*UpdateBalanceRequest)(nil),  // 2: userrpc.UpdateBalanceRequest
-	(*UpdateBalanceResponse)(nil), // 3: userrpc.UpdateBalanceResponse
+	(*Request)(nil),                // 0: userrpc.Request
+	(*Response)(nil),               // 1: userrpc.Response
+	(*UpdateBalanceRequest)(nil),   // 2: userrpc.UpdateBalanceRequest
+	(*UpdateBalanceResponse)(nil),  // 3: userrpc.UpdateBalanceResponse
+	(*TranInRequest)(nil),          // 4: userrpc.TranInRequest
+	(*TranInResponse)(nil),         // 5: userrpc.TranInResponse
+	(*TranInReverseRequest)(nil),   // 6: userrpc.TranInReverseRequest
+	(*TranInReverseResponse)(nil),  // 7: userrpc.TranInReverseResponse
+	(*TranOutRequest)(nil),         // 8: userrpc.TranOutRequest
+	(*TranOutResponse)(nil),        // 9: userrpc.TranOutResponse
+	(*TranOutReverseRequest)(nil),  // 10: userrpc.TranOutReverseRequest
+	(*TranOutReverseResponse)(nil), // 11: userrpc.TranOutReverseResponse
 }
 var file_userrpc_proto_depIdxs = []int32{
-	0, // 0: userrpc.Userrpc.Ping:input_type -> userrpc.Request
-	2, // 1: userrpc.Userrpc.UpdateBalance:input_type -> userrpc.UpdateBalanceRequest
-	1, // 2: userrpc.Userrpc.Ping:output_type -> userrpc.Response
-	3, // 3: userrpc.Userrpc.UpdateBalance:output_type -> userrpc.UpdateBalanceResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: userrpc.Userrpc.Ping:input_type -> userrpc.Request
+	2,  // 1: userrpc.Userrpc.UpdateBalance:input_type -> userrpc.UpdateBalanceRequest
+	4,  // 2: userrpc.Userrpc.TranIn:input_type -> userrpc.TranInRequest
+	8,  // 3: userrpc.Userrpc.TranOut:input_type -> userrpc.TranOutRequest
+	4,  // 4: userrpc.Userrpc.TranReverseIn:input_type -> userrpc.TranInRequest
+	8,  // 5: userrpc.Userrpc.TranReverseOut:input_type -> userrpc.TranOutRequest
+	1,  // 6: userrpc.Userrpc.Ping:output_type -> userrpc.Response
+	3,  // 7: userrpc.Userrpc.UpdateBalance:output_type -> userrpc.UpdateBalanceResponse
+	5,  // 8: userrpc.Userrpc.TranIn:output_type -> userrpc.TranInResponse
+	9,  // 9: userrpc.Userrpc.TranOut:output_type -> userrpc.TranOutResponse
+	7,  // 10: userrpc.Userrpc.TranReverseIn:output_type -> userrpc.TranInReverseResponse
+	11, // 11: userrpc.Userrpc.TranReverseOut:output_type -> userrpc.TranOutReverseResponse
+	6,  // [6:12] is the sub-list for method output_type
+	0,  // [0:6] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_userrpc_proto_init() }
@@ -329,6 +798,102 @@ func file_userrpc_proto_init() {
 				return nil
 			}
 		}
+		file_userrpc_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranInRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranInResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranInReverseRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranInReverseResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranOutRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranOutResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranOutReverseRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_userrpc_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TranOutReverseResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -336,7 +901,7 @@ func file_userrpc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_userrpc_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

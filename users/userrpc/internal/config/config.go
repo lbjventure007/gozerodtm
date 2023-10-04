@@ -8,6 +8,7 @@ import (
 type Config struct {
 	zrpc.RpcServerConf
 	//UserModel model.UserModel
-	Dsn    string
+	Dsn1   string
+	Dsn2   string
 	Consul consul.Conf
 }

@@ -14,11 +14,23 @@ type UpdateBalanceResponse {
 	Message string `json:"message"`
 }
 
+type TranInOutRequest {
+	InId    int64   `json:"inid"`
+	OutId   int64   `json:"outid"`
+	Balance float64 `json:"balance"`
+}
+type TranInOutResponse {
+	Message string `json:"message"`
+}
+
 service userapi-api {
 	@handler UserapiHandler
 	get /from/:name(Request) returns (Response)
 
 	@handler UpdateBalanceHandler
 	post /user/update-balance(UpdateBalanceRequest) returns(UpdateBalanceResponse)
+
+	@handler TranInOutBalanceHandler
+	post /user/tran-inout(TranInOutRequest) returns(TranInOutResponse)
 
 }

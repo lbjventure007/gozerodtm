@@ -22,6 +22,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/user/update-balance",
 				Handler: UpdateBalanceHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/user/tran-inout",
+				Handler: TranInOutBalanceHandler(serverCtx),
+			},
 		},
 	)
 }

@@ -19,8 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Userrpc_Ping_FullMethodName          = "/userrpc.Userrpc/Ping"
-	Userrpc_UpdateBalance_FullMethodName = "/userrpc.Userrpc/UpdateBalance"
+	Userrpc_Ping_FullMethodName           = "/userrpc.Userrpc/Ping"
+	Userrpc_UpdateBalance_FullMethodName  = "/userrpc.Userrpc/UpdateBalance"
+	Userrpc_TranIn_FullMethodName         = "/userrpc.Userrpc/TranIn"
+	Userrpc_TranOut_FullMethodName        = "/userrpc.Userrpc/TranOut"
+	Userrpc_TranReverseIn_FullMethodName  = "/userrpc.Userrpc/TranReverseIn"
+	Userrpc_TranReverseOut_FullMethodName = "/userrpc.Userrpc/TranReverseOut"
 )
 
 // UserrpcClient is the client API for Userrpc service.
@@ -29,6 +33,10 @@ const (
 type UserrpcClient interface {
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	UpdateBalance(ctx context.Context, in *UpdateBalanceRequest, opts ...grpc.CallOption) (*UpdateBalanceResponse, error)
+	TranIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInResponse, error)
+	TranOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutResponse, error)
+	TranReverseIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInReverseResponse, error)
+	TranReverseOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutReverseResponse, error)
 }
 
 type userrpcClient struct {
@@ -57,12 +65,52 @@ func (c *userrpcClient) UpdateBalance(ctx context.Context, in *UpdateBalanceRequ
 	return out, nil
 }
 
+func (c *userrpcClient) TranIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInResponse, error) {
+	out := new(TranInResponse)
+	err := c.cc.Invoke(ctx, Userrpc_TranIn_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userrpcClient) TranOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutResponse, error) {
+	out := new(TranOutResponse)
+	err := c.cc.Invoke(ctx, Userrpc_TranOut_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userrpcClient) TranReverseIn(ctx context.Context, in *TranInRequest, opts ...grpc.CallOption) (*TranInReverseResponse, error) {
+	out := new(TranInReverseResponse)
+	err := c.cc.Invoke(ctx, Userrpc_TranReverseIn_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userrpcClient) TranReverseOut(ctx context.Context, in *TranOutRequest, opts ...grpc.CallOption) (*TranOutReverseResponse, error) {
+	out := new(TranOutReverseResponse)
+	err := c.cc.Invoke(ctx, Userrpc_TranReverseOut_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserrpcServer is the server API for Userrpc service.
 // All implementations must embed UnimplementedUserrpcServer
 // for forward compatibility
 type UserrpcServer interface {
 	Ping(context.Context, *Request) (*Response, error)
 	UpdateBalance(context.Context, *UpdateBalanceRequest) (*UpdateBalanceResponse, error)
+	TranIn(context.Context, *TranInRequest) (*TranInResponse, error)
+	TranOut(context.Context, *TranOutRequest) (*TranOutResponse, error)
+	TranReverseIn(context.Context, *TranInRequest) (*TranInReverseResponse, error)
+	TranReverseOut(context.Context, *TranOutRequest) (*TranOutReverseResponse, error)
 	mustEmbedUnimplementedUserrpcServer()
 }
 
@@ -75,6 +123,18 @@ func (UnimplementedUserrpcServer) Ping(context.Context, *Request) (*Response, er
 }
 func (UnimplementedUserrpcServer) UpdateBalance(context.Context, *UpdateBalanceRequest) (*UpdateBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBalance not implemented")
+}
+func (UnimplementedUserrpcServer) TranIn(context.Context, *TranInRequest) (*TranInResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranIn not implemented")
+}
+func (UnimplementedUserrpcServer) TranOut(context.Context, *TranOutRequest) (*TranOutResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranOut not implemented")
+}
+func (UnimplementedUserrpcServer) TranReverseIn(context.Context, *TranInRequest) (*TranInReverseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranReverseIn not implemented")
+}
+func (UnimplementedUserrpcServer) TranReverseOut(context.Context, *TranOutRequest) (*TranOutReverseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranReverseOut not implemented")
 }
 func (UnimplementedUserrpcServer) mustEmbedUnimplementedUserrpcServer() {}
 
@@ -125,6 +185,78 @@ func _Userrpc_UpdateBalance_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Userrpc_TranIn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranInRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserrpcServer).TranIn(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Userrpc_TranIn_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserrpcServer).TranIn(ctx, req.(*TranInRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Userrpc_TranOut_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranOutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserrpcServer).TranOut(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Userrpc_TranOut_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserrpcServer).TranOut(ctx, req.(*TranOutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Userrpc_TranReverseIn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranInRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserrpcServer).TranReverseIn(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Userrpc_TranReverseIn_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserrpcServer).TranReverseIn(ctx, req.(*TranInRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Userrpc_TranReverseOut_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranOutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserrpcServer).TranReverseOut(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Userrpc_TranReverseOut_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserrpcServer).TranReverseOut(ctx, req.(*TranOutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Userrpc_ServiceDesc is the grpc.ServiceDesc for Userrpc service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -139,6 +271,22 @@ var Userrpc_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateBalance",
 			Handler:    _Userrpc_UpdateBalance_Handler,
+		},
+		{
+			MethodName: "TranIn",
+			Handler:    _Userrpc_TranIn_Handler,
+		},
+		{
+			MethodName: "TranOut",
+			Handler:    _Userrpc_TranOut_Handler,
+		},
+		{
+			MethodName: "TranReverseIn",
+			Handler:    _Userrpc_TranReverseIn_Handler,
+		},
+		{
+			MethodName: "TranReverseOut",
+			Handler:    _Userrpc_TranReverseOut_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

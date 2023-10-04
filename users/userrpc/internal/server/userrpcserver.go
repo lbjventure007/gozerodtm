@@ -31,3 +31,23 @@ func (s *UserrpcServer) UpdateBalance(ctx context.Context, in *userrpc.UpdateBal
 	l := logic.NewUpdateBalanceLogic(ctx, s.svcCtx)
 	return l.UpdateBalance(in)
 }
+
+func (s *UserrpcServer) TranIn(ctx context.Context, in *userrpc.TranInRequest) (*userrpc.TranInResponse, error) {
+	l := logic.NewTranInLogic(ctx, s.svcCtx)
+	return l.TranIn(in)
+}
+
+func (s *UserrpcServer) TranOut(ctx context.Context, in *userrpc.TranOutRequest) (*userrpc.TranOutResponse, error) {
+	l := logic.NewTranOutLogic(ctx, s.svcCtx)
+	return l.TranOut(in)
+}
+
+func (s *UserrpcServer) TranReverseIn(ctx context.Context, in *userrpc.TranInRequest) (*userrpc.TranInReverseResponse, error) {
+	l := logic.NewTranReverseInLogic(ctx, s.svcCtx)
+	return l.TranReverseIn(in)
+}
+
+func (s *UserrpcServer) TranReverseOut(ctx context.Context, in *userrpc.TranOutRequest) (*userrpc.TranOutReverseResponse, error) {
+	l := logic.NewTranReverseOutLogic(ctx, s.svcCtx)
+	return l.TranReverseOut(in)
+}
